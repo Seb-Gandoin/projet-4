@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+:root {
+    --color-1: #E2E9C0;
+    --color-1-darker: #C0C6A3;
+    --color-2: #A7001E;
+    --color-3: #1E0F1C;
+    --font-family-title: "Dancing Script", cursive;
+    --font-family-text: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    background: var(--color-1);
+    h1 {
+    font-family: var(--font-family-title);
+    font-weight: bolder;
+    color: var(--color-3);
+    text-align: center;
+    font-size: 3rem;
+    }
+}
