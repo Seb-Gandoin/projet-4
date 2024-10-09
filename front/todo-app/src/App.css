@@ -21,4 +21,8 @@ body {
     text-align: center;
     font-size: 3rem;
     }
+    .app-flex {
+        display: flex;
+        justify-content: space-around;
+    }
 }

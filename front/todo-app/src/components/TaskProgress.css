@@ -1,0 +1,15 @@
+/* TaskProgress.css */
+.task-progress {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    width: 35vw;
+    font-family: var(--font-family-text);
+    
+    text {
+        font-weight: bold;
+       
+    }
+}

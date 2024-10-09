@@ -1,9 +1,8 @@
-
-
 import { useState, useEffect } from 'react';
 import './App.css';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
+import TaskProgress from './components/TaskProgress';  // Import du composant
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -50,10 +49,12 @@ function App() {
         <div className="App">
             <h1>To-Do List</h1>
             <TaskForm addTask={addTask} />
-            <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+            <div className='app-flex'>
+                <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+                <TaskProgress tasks={tasks} />
+            </div>
         </div>
     );
 }
 
 export default App;
-

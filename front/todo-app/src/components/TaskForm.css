@@ -2,7 +2,7 @@
     background-color: var(--color-1-darker);
     border: 1px gray solid;
     padding: 10px;
-    margin: 0 auto;
+    margin: 0 auto 35px;
     width: 35vw;
     border-radius: 5px;
     font-family: var(--font-family-text);
