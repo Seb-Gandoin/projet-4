@@ -1,28 +1,80 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
 
 :root {
     --color-1: #E2E9C0;
     --color-1-darker: #C0C6A3;
     --color-2: #A7001E;
     --color-3: #1E0F1C;
+    --color-3-lighter: #3B2D38;
     --font-family-title: "Dancing Script", cursive;
     --font-family-text: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
-    background: var(--color-1);
-    h1 {
+    font-family: var(--font-family-text);
+}
+
+body.light {
+    background-color: var(--color-1);
+    color: var(--color-3);
+}
+
+body.dark {
+    background-color: var(--color-3);
+    color: var(--color-1);
+}
+
+h1 {
     font-family: var(--font-family-title);
     font-weight: bolder;
     color: var(--color-3);
     text-align: center;
     font-size: 3rem;
-    }
+}
+
+body.dark h1 {
+    color: var(--color-1);
+}
+
+.app-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px) {
     .app-flex {
-        display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
     }
 }
+
+button {
+    border-radius: 5px;
+    background-color: var(--color-2);
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: #8f001a;
+}
+
+body.dark button {
+    background-color: var(--color-2);
+    color: var(--color-1);
+}
+
+body.dark button:hover {
+    background-color: #8f001a;
+}
+
+

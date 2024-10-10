@@ -7,9 +7,14 @@
     margin-top: 30px;
     width: 35vw;
     font-family: var(--font-family-text);
-    
+
     text {
         font-weight: bold;
        
+    }
+}
+@media (max-width: 900px) {
+    .task-form {
+        width: 90vw;
     }
 }
