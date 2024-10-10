@@ -49,32 +49,32 @@ body.dark h1 {
 }
 
 .filter-container {
-    margin: 20px 0; /* Marge autour du conteneur du filtre */
+    margin: 20px 0;
     display: flex;
-    align-items: center; /* Centre verticalement le label et le select */
+    align-items: center;
 }
 
 .filter-container label {
-    margin-right: 10px; /* Espace entre le label et le select */
-    font-size: 1rem; /* Taille de police pour le label */
+    margin-right: 10px;
+    font-size: 1rem;
 }
 
 .filter-container select {
-    font-size: 1rem; /* Taille de police pour le select */
-    border: 1px solid #ccc; /* Bordure grise claire */
-    border-radius: 5px; /* Coins arrondis */
-    background-color: white; /* Couleur de fond du select */
-    cursor: pointer; /* Curseur en forme de main */
-    transition: border-color 0.3s; /* Transition pour le changement de bordure */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
 }
 
 .filter-container select:hover {
-    border-color: #A7001E; /* Changer la couleur de la bordure au survol */
+    border-color: #A7001E;
 }
 
 .filter-container select:focus {
-    outline: none; /* Supprimer le contour par défaut */
-    border-color: #A7001E; /* Changer la couleur de la bordure au focus */
+    outline: none;
+    border-color: #A7001E;
 }
 
 @media (max-width: 900px) {

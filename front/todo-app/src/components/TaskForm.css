@@ -34,8 +34,8 @@
 }
 
 body.dark .task-form {
-    background-color: var(--color-3-lighter); /* Fond sombre */
-    color: var(--color-1); /* Texte clair */
+    background-color: var(--color-3-lighter);
+    color: var(--color-1);
     border: none;
 }
 body.dark .task-form-input {

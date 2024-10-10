@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 import './TaskProgress.css';
 
@@ -6,7 +5,6 @@ const TaskProgress = ({ tasks }) => {
     const totalTasks = tasks.length;
     const completedTasks = tasks.filter(task => task.completed).length;
 
-    // Calcul du pourcentage de tâches complètes
     const percentage = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
 
     return (
@@ -17,7 +15,7 @@ const TaskProgress = ({ tasks }) => {
                     cx="50"
                     cy="50"
                     r="45"
-                    stroke="#A7001E" // Couleur pour la jauge remplie
+                    stroke="#A7001E"
                     strokeWidth="10"
                     fill="none"
                     strokeDasharray={`${percentage * 2.83} ${283 - percentage * 2.83}`} // 2 * PI * r = 2 * 3.14 * 45 = 282.6

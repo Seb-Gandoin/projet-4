@@ -8,15 +8,15 @@ function TaskList({ tasks, updateTask, deleteTask }) {
 
     const handleEditClick = (task) => {
         setEditingTask(task);
-        setNewTaskName(task.name); // Remplir le champ avec le nom de la tâche à éditer
+        setNewTaskName(task.name);
     };
 
     const handleUpdateTask = (e) => {
         e.preventDefault();
         if (newTaskName.trim()) {
             updateTask(editingTask.id, { ...editingTask, name: newTaskName });
-            setEditingTask(null); // Fermer le formulaire d'édition après la mise à jour
-            setNewTaskName(''); // Réinitialiser le nom de la tâche
+            setEditingTask(null);
+            setNewTaskName('');
         }
     };
 
