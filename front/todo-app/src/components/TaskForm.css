@@ -38,3 +38,6 @@ body.dark .task-form {
     color: var(--color-1); /* Texte clair */
     border: none;
 }
+body.dark .task-form-input {
+    background-color: var(--color-1-darker);
+}

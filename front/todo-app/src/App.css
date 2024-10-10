@@ -48,6 +48,35 @@ body.dark h1 {
     justify-content: space-around;
 }
 
+.filter-container {
+    margin: 20px 0; /* Marge autour du conteneur du filtre */
+    display: flex;
+    align-items: center; /* Centre verticalement le label et le select */
+}
+
+.filter-container label {
+    margin-right: 10px; /* Espace entre le label et le select */
+    font-size: 1rem; /* Taille de police pour le label */
+}
+
+.filter-container select {
+    font-size: 1rem; /* Taille de police pour le select */
+    border: 1px solid #ccc; /* Bordure grise claire */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: white; /* Couleur de fond du select */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: border-color 0.3s; /* Transition pour le changement de bordure */
+}
+
+.filter-container select:hover {
+    border-color: #A7001E; /* Changer la couleur de la bordure au survol */
+}
+
+.filter-container select:focus {
+    outline: none; /* Supprimer le contour par défaut */
+    border-color: #A7001E; /* Changer la couleur de la bordure au focus */
+}
+
 @media (max-width: 900px) {
     .app-flex {
         flex-direction: column;
@@ -77,4 +106,6 @@ body.dark button:hover {
     background-color: #8f001a;
 }
 
-
+body.dark .filter-container select {
+    background-color: var(--color-1-darker);
+}

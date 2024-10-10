@@ -1,11 +1,19 @@
+
 // import { useState, useEffect } from 'react';
 // import './App.css';
 // import TaskForm from './components/TaskForm';
 // import TaskList from './components/TaskList';
-// import TaskProgress from './components/TaskProgress';  // Import du composant
+// import TaskProgress from './components/TaskProgress';
 
 // function App() {
 //     const [tasks, setTasks] = useState([]);
+//     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');  // Charge le thème depuis le localStorage
+
+//     // Synchroniser la classe body avec le thème
+//     useEffect(() => {
+//         document.body.className = theme;  // Applique la classe 'light' ou 'dark' au body
+//         localStorage.setItem('theme', theme);  // Sauvegarde le thème dans le localStorage
+//     }, [theme]);
 
 //     useEffect(() => {
 //         fetch('http://localhost:5000/tasks')
@@ -45,9 +53,20 @@
 //             .catch(error => console.error('Error:', error));
 //     };
 
+//     // Fonction pour basculer entre le thème clair et sombre
+//     const toggleTheme = () => {
+//         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+//     };
+
 //     return (
 //         <div className="App">
-//             <h1>To-Do List</h1>
+//             <div className='app-navbar'>
+//                <div></div>
+//                 <h1>To-Do List</h1>
+//                 <button onClick={toggleTheme}>
+//                     {theme === 'light' ? 'sombre' : 'clair'}
+//                 </button>
+//             </div>
 //             <TaskForm addTask={addTask} />
 //             <div className='app-flex'>
 //                 <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
@@ -68,12 +87,12 @@ import TaskProgress from './components/TaskProgress';
 
 function App() {
     const [tasks, setTasks] = useState([]);
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');  // Charge le thème depuis le localStorage
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const [filter, setFilter] = useState('all'); // État pour le filtre
 
-    // Synchroniser la classe body avec le thème
     useEffect(() => {
-        document.body.className = theme;  // Applique la classe 'light' ou 'dark' au body
-        localStorage.setItem('theme', theme);  // Sauvegarde le thème dans le localStorage
+        document.body.className = theme;
+        localStorage.setItem('theme', theme);
     }, [theme]);
 
     useEffect(() => {
@@ -114,7 +133,18 @@ function App() {
             .catch(error => console.error('Error:', error));
     };
 
-    // Fonction pour basculer entre le thème clair et sombre
+    // Fonction pour changer le filtre
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+    };
+
+    // Filtrer les tâches en fonction du filtre sélectionné
+    const filteredTasks = tasks.filter(task => {
+        if (filter === 'completed') return task.completed;
+        if (filter === 'incomplete') return !task.completed;
+        return true; // 'all'
+    });
+
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
@@ -122,19 +152,29 @@ function App() {
     return (
         <div className="App">
             <div className='app-navbar'>
-               <div></div>
+                <div></div>
                 <h1>To-Do List</h1>
                 <button onClick={toggleTheme}>
                     {theme === 'light' ? 'sombre' : 'clair'}
                 </button>
             </div>
             <TaskForm addTask={addTask} />
+            {/* Ajout d'un sélecteur de filtre */}
+            <div className="filter-container">
+                <label htmlFor="filter">Filtrer les tâches :</label>
+                <select id="filter" value={filter} onChange={handleFilterChange}>
+                    <option value="all">Toutes</option>
+                    <option value="completed">Complètes</option>
+                    <option value="incomplete">Incomplètes</option>
+                </select>
+            </div>
             <div className='app-flex'>
-                <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
-                <TaskProgress tasks={tasks} />
+                <TaskList tasks={filteredTasks} updateTask={updateTask} deleteTask={deleteTask} />
+                <TaskProgress tasks={filteredTasks} />
             </div>
         </div>
     );
 }
 
 export default App;
+

@@ -54,6 +54,7 @@ function TaskList({ tasks, updateTask, deleteTask }) {
                         value={newTaskName}
                         onChange={(e) => setNewTaskName(e.target.value)}
                         placeholder="Modifier la tâche"
+                        className='modify'
                     />
                     <button type="submit">Mettre à jour</button>
                     <button type="button" onClick={() => setEditingTask(null)}>Annuler</button>

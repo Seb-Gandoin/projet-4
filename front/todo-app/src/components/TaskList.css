@@ -44,8 +44,16 @@
         }
     }
 }
+.modify {
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+}
 @media (max-width: 900px) {
     .task-list {
         width: 90vw;
     }
+}
+body.dark .modify {
+    background-color: var(--color-1-darker);
 }
